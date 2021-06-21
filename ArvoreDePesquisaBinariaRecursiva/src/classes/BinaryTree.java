@@ -20,6 +20,7 @@ public class BinaryTree {
         if (n == null) {
             n = new Node();
             n.item = externalItem;
+            System.out.println("Item de valor " + n.item.key + " adicionado");
         } else if (externalItem.key < n.item.key)
             n.left = insert(externalItem, n.left);
         else if (externalItem.key > n.item.key)
