@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        BinaryTree tree = new BinaryTree();
+        SBBTree tree = new SBBTree();
         Scanner input = new Scanner(System.in);
 
         int v = 0;
