@@ -13,27 +13,33 @@ public class SBBTree {
         this.propSBB = true;
     }
 
-    public void insert(Item item) {
-        this.root = insert(item, null, this.root, true);
+    public void insert(Item externalItem) {
+        this.root = insert(externalItem, null, this.root, true);
     }
 
-    private Node insert(Item item, Node parent, Node child, boolean childLeft) {
+    public Item search(Item externalItem) {
+        return this.search(externalItem, this.root);
+    }
+
+    private Node insert(Item externalItem, Node parent, Node child, boolean childLeft) {
         if (child == null) {
             child = new Node();
-            child.item = item;
+            child.item = externalItem;
             child.incL = Vertical;
             child.incR = Vertical;
             child.left = null;
             child.right = null;
-            if (parent != null)
-                if (childLeft)
+            if (parent != null) {
+                if (childLeft) {
                     parent.incL = Horizontal;
-                else
+                } else {
                     parent.incR = Horizontal;
+                }
+            }
             this.propSBB = false;
             System.out.println("Item de valor " + child.item.key + " adicionado");
-        } else if (item.key < child.item.key) {
-            child.left = insert(item, child, child.left, true);
+        } else if (externalItem.key < child.item.key) {
+            child.left = insert(externalItem, child, child.left, true);
             if (!this.propSBB)
                 if (child.incL == Horizontal) {
                     if (child.left.incL == Horizontal) {
@@ -53,8 +59,8 @@ public class SBBTree {
                     }
                 } else
                     this.propSBB = true;
-        } else if (item.key > child.item.key) {
-            child.right = insert(item, child, child.right, false);
+        } else if (externalItem.key > child.item.key) {
+            child.right = insert(externalItem, child, child.right, false);
             if (!this.propSBB)
                 if (child.incR == Horizontal) {
                     if (child.right.incR == Horizontal) {
@@ -79,22 +85,21 @@ public class SBBTree {
             this.propSBB = true;
         }
         return child;
-
     }
 
-    public Item search(Item item) {
-        return this.search(item, this.root);
-    }
-
-    private Item search(Item item, Node p) {
-        if (p == null)
+    private Item search(Item item, Node n) {
+        if (n == null) {
+            Globals.currentSearchDepth++;
             return null;
-        else if (item.key < p.item.key)
-            return search(item, p.left);
-        else if (item.key > p.item.key)
-            return search(item, p.right);
-        else
-            return p.item;
+        } else if (item.key < n.item.key) {
+            Globals.currentSearchDepth++;
+            return search(item, n.left);
+        } else if (item.key > n.item.key) {
+            Globals.currentSearchDepth++;
+            return search(item, n.right);
+        } else {
+            return n.item;
+        }
     }
 
     private Node leftLeft(Node ap) {

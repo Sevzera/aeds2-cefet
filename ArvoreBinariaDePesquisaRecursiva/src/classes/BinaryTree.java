@@ -21,24 +21,29 @@ public class BinaryTree {
             n = new Node();
             n.item = externalItem;
             System.out.println("Item de valor " + n.item.key + " adicionado");
-        } else if (externalItem.key < n.item.key)
+        } else if (externalItem.key < n.item.key) {
             n.left = insert(externalItem, n.left);
-        else if (externalItem.key > n.item.key)
+        } else if (externalItem.key > n.item.key) {
             n.right = insert(externalItem, n.right);
-        else
+        } else {
             System.out.println("Erro: Registro ja existente");
+        }
         return n;
     }
 
     private Item search(Item externalItem, Node n) {
-        if (n == null)
+        if (n == null) {
+            Globals.currentSearchDepth++;
             return null;
-        else if (externalItem.key < n.item.key)
+        } else if (externalItem.key < n.item.key) {
+            Globals.currentSearchDepth++;
             return search(externalItem, n.left);
-        else if (externalItem.key > n.item.key)
+        } else if (externalItem.key > n.item.key) {
+            Globals.currentSearchDepth++;
             return search(externalItem, n.right);
-        else
+        } else {
             return n.item;
+        }
     }
 
 }
