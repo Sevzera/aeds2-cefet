@@ -20,7 +20,7 @@ public class Main {
         do {
             v = input.nextInt();
             refItem = tree.search(new Item(v));
-            if (refItem.key == 0) {
+            if (refItem == null) {
                 System.out.println("Item de valor " + v + " nao encontrado apos " + Globals.currentSearchDepth + " comparacoes");
             } else if (v != 0) {
                 System.out.println("Item de valor " + refItem.key + " encontrado no nivel " + Globals.currentSearchDepth);

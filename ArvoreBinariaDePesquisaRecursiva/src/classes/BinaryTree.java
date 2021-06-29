@@ -33,7 +33,6 @@ public class BinaryTree {
 
     private Item search(Item externalItem, Node n) {
         if (n == null) {
-            Globals.currentSearchDepth++;
             return null;
         } else if (externalItem.key < n.item.key) {
             Globals.currentSearchDepth++;

@@ -89,7 +89,6 @@ public class SBBTree {
 
     private Item search(Item item, Node n) {
         if (n == null) {
-            Globals.currentSearchDepth++;
             return null;
         } else if (item.key < n.item.key) {
             Globals.currentSearchDepth++;
