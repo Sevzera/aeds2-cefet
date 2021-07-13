@@ -11,12 +11,16 @@ public class Main {
         Item refItem;
 
         System.out.println("Procedimento de insercao iniciado.\nDigite inteiros para inserir.\nDigite 0 para encerrar.");
+        v = input.nextInt();       
+        
         do {
-            v = input.nextInt();
             tree.insert(new Item(v));
+            v = input.nextInt();
         } while (v != 0);
 
         System.out.println("Procedimento de busca iniciado.\nDigite um inteiro para buscar.\nDigite 0 para encerrar.");
+        v = input.nextInt();
+        
         do {
             v = input.nextInt();
             refItem = tree.search(new Item(v));
@@ -26,6 +30,7 @@ public class Main {
                 System.out.println("Item de valor " + refItem.key + " encontrado no nivel " + Globals.currentSearchDepth);
             }
             Globals.currentSearchDepth = 0;
+            v = input.nextInt();
         } while (v != 0);
 
         input.close();
