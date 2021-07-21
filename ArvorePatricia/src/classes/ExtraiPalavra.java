@@ -16,7 +16,7 @@ public class ExtraiPalavra {
         this.arqDelim = new BufferedReader(new FileReader(nomeArqDelim));
         this.arqTxt = new BufferedReader(new FileReader(nomeArqTxt));
         // Os delimitadores devem estar juntos em uma única linha do arquivo
-        this.delimitadores = arqDelim.readLine() + "\r \n";
+        this.delimitadores = arqDelim.readLine() + "\r\n";
         this.palavras = null;
         this.palavra = null;
         this.palavraAnt = " ";
