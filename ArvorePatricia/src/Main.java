@@ -29,28 +29,28 @@ public class Main {
             }
         }
 
-        // // EXEMPLO 1
-        // tree.search(new Word("trabalho"));
-        // System.out.println();
-        // tree.search(new Word("computacao"));
-        // System.out.println();
-        // tree.search(new Word("governo"));
-        // System.out.println();
-        // tree.search(new Word("educacao"));
-        // System.out.println();
-        // tree.search(new Word("tecnologia"));
-        // System.out.println();
-        // tree.search(new Word("formacao"));
-        // System.out.println();
-        // tree.search(new Word("desenvolvimento"));
-        // System.out.println();
-        // tree.search(new Word("que"));
-        // System.out.println();
-        // tree.search(new Word("informatica"));
-        // System.out.println();
-        // tree.search(new Word("em"));
-        // System.out.println();
-        // tree.search(new Word("crise"));
+        // EXEMPLO 1
+        tree.search(new Word("trabalho"));
+        System.out.println();
+        tree.search(new Word("computacao"));
+        System.out.println();
+        tree.search(new Word("governo"));
+        System.out.println();
+        tree.search(new Word("educacao"));
+        System.out.println();
+        tree.search(new Word("tecnologia"));
+        System.out.println();
+        tree.search(new Word("formacao"));
+        System.out.println();
+        tree.search(new Word("desenvolvimento"));
+        System.out.println();
+        tree.search(new Word("que"));
+        System.out.println();
+        tree.search(new Word("informatica"));
+        System.out.println();
+        tree.search(new Word("em"));
+        System.out.println();
+        tree.search(new Word("crise"));
 
         // // EXEMPLO 2
         // tree.search(new Word("sociedade"));
