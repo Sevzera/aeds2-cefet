@@ -5,7 +5,7 @@ public class Main{
 
         // RETIRAR COMENTARIOS DO TESTE A SER FEITO
 
-        // g QUADRADO
+        // GRAFO QUADRADO
         Graph g = new Graph(4);
         g.addEdge(0, 1, 1);
         g.addEdge(1, 2, 1);

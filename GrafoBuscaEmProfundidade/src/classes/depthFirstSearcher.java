@@ -1,6 +1,6 @@
 package classes;
 
-public class depthFirstSearcher {
+public class DepthFirstSearcher {
     public static final byte white = 0;
     public static byte gray = 1;
     public static byte black = 2;
@@ -8,7 +8,7 @@ public class depthFirstSearcher {
     private Graph graph;
     private boolean cycleFound;
 
-    public depthFirstSearcher(Graph graph) {
+    public DepthFirstSearcher(Graph graph) {
         this.graph = graph;
         int n = this.graph.nVertices();
         this.cycleFound = false;
