@@ -4,13 +4,13 @@ public class Graph {
     public static class Edge {
         private int v1, v2, weight;
 
-        public Edge(int v1, int v2, int peso) {
+        public Edge(int v1, int v2, int weight) {
             this.v1 = v1;
             this.v2 = v2;
-            this.weight = peso;
+            this.weight = weight;
         }
 
-        public int peso() {
+        public int weight() {
             return this.weight;
         }
 
@@ -38,8 +38,8 @@ public class Graph {
         }
     }
 
-    public void addEdge(int v1, int v2, int peso) {
-        this.adjacencyMatrix[v1][v2] = peso;
+    public void addEdge(int v1, int v2, int weight) {
+        this.adjacencyMatrix[v1][v2] = weight;
     }
 
     public boolean areAdjacent(int v1, int v2) {

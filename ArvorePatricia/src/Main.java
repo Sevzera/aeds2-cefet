@@ -4,14 +4,14 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         PatriciaTrie tree = new PatriciaTrie();
-        String delimitersPath = "classes/tests/delimiters.txt";
-        String filePath = "classes/tests/test1.txt"; // MUDAR PARA O DIRETÓRIO DO TESTE
-        ExtraiPalavra extractor = new ExtraiPalavra(delimitersPath, filePath);
+        String delimitersPath = "classes/files/delimiters.txt";
+        String filePath = "classes/files/tests/test1.txt"; // MUDAR PARA O DIRETÓRIO DO TESTE
+        TextParser extractor = new TextParser(delimitersPath, filePath);
 
         Word word;
         String currentKey;
         while (true) {
-            currentKey = extractor.proximaPalavra();
+            currentKey = extractor.nextWord();
             if (currentKey == null)
                 break;
 
@@ -77,6 +77,6 @@ public class Main {
         // System.out.println();
         // tree.search(new Word("moral"));
 
-        extractor.fecharArquivos();
+        extractor.closeFiles();
     }
 }
